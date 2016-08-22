@@ -1,2 +1,0 @@
-class UserPolls < ApplicationRecord
-end
