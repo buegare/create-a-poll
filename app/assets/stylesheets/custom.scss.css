@@ -29,6 +29,33 @@ body {
 	margin-right: auto;
 }
 
+.polls-list {
+	margin: 100px 30px 0px 30px;
+}
+
+.each_poll {
+	background-color: #fff;
+	padding: 1px 10px 8px 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+.each_poll:hover {
+	border-left: solid 8px rgb(217, 83, 79);
+    border-radius: 5px;
+    margin-left: -8px;
+}
+
+div.polls-list a:hover {
+	text-decoration: none;
+}
+
+div.polls-list a {
+	color: rgba(0, 0, 0, 0.70);
+}
+
+
+
 /*.row {
 	border: solid 1px red;
 }

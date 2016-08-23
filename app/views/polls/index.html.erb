@@ -1,2 +1,9 @@
-<h1>Polls#index</h1>
-<p>Find me in app/views/polls/index.html.erb</p>
+<div class="polls-list">
+<% @polls.each do |poll| %>
+	<%= link_to poll_path(poll) do %>
+		<div class="each_poll">
+			<h2 class="text-center"><%= poll.title %></h2>
+		</div>
+	<% end %>
+<% end %>
+</div>
