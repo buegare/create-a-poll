@@ -1,2 +1,0 @@
-class PollQuestion < ApplicationRecord
-end
