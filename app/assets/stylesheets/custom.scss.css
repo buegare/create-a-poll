@@ -4,6 +4,7 @@ body {
 
 .logout {
 	float: right;
+	margin-top: 20px;
 }
 
 .logo {
@@ -54,7 +55,16 @@ div.polls-list a {
 	color: rgba(0, 0, 0, 0.70);
 }
 
+.btn-add-poll {
+	font-size: 20px;
+    padding: 0px 10px;
+    float: right;
+    margin-top: 20px;
+}
 
+.create-poll-form-position {
+	margin-top: 100px;
+}
 
 /*.row {
 	border: solid 1px red;

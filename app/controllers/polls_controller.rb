@@ -12,6 +12,12 @@ class PollsController < ApplicationController
 
   def show; end
 
+  def create	
+	respond_to do |format|
+		format.js
+	end
+  end
+
   private
     
     def set_poll
