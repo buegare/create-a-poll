@@ -3,19 +3,24 @@ class PollsController < ApplicationController
 
 
   def index
-  	@polls = Poll.where("user_id = ?",  current_user.id)
-  end
-
-  def new
-  	@poll = Poll.new
+  	@polls = Poll.where("user_id = ?",  current_user.id).order(created_at: :desc)
   end
 
   def show; end
 
-  def create	
-	respond_to do |format|
-		format.js
+  def create
+  	puts params[:poll_title_param]
+  	@poll = current_user.polls.new(title: params[:poll_title_param])
+   	if @poll.save
+  	  	params[:answer_title_param].each do |i|
+	   		@poll.questions.create(title: "#{i}", votes: 0)
+		end
+
+		respond_to do |format|
+			format.js
+		end
 	end
+  
   end
 
   private

@@ -1,0 +1,5 @@
+$('.create-poll-form-position').remove();
+
+var new_poll = $("<a href='/polls/<%= @poll.id %>'></a>").append("<div class='each_poll'><h2 class='text-center'><%= @poll.title %></h2></div>")
+
+$('.polls-list').prepend(new_poll);
