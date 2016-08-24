@@ -3,7 +3,7 @@ class PollsController < ApplicationController
 
 
   def index
-  	@polls = Poll.where("user_id = ?",  current_user.id).order(created_at: :desc)
+  	@polls = Poll.find_polls(current_user.id)
   end
 
   def show; end
