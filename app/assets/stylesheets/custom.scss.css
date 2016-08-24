@@ -45,6 +45,7 @@ body {
 	border-left: solid 8px rgb(217, 83, 79);
     border-radius: 5px;
     margin-left: -8px;
+    background-color: rgba(255,255,255,0.9);
 }
 
 div.polls-list a:hover {
@@ -56,8 +57,6 @@ div.polls-list a {
 }
 
 .btn-add-poll {
-	font-size: 20px;
-    padding: 0px 10px;
     float: right;
     margin-top: 20px;
 }
