@@ -1,22 +1,25 @@
-<div class="show-poll">
+<%= form_tag questions_update_path, remote: true, method: :get, class: 'show-poll' do %>
+
 	<h2 class="text-center" id="poll-title"><%= @poll.title %></h2>
 
 	<% @poll.questions.each do |q| %>
 		<div class="row">
 			<div class="col-xs-6">
 				<div class="col-xs-1">
-					<h4><%= radio_button_tag(:question_id, q.id) %></h4>
+					<h4><%= radio_button_tag(:answer, q.id) %></h4>
 				</div>
 				<div class="col-xs-11">
-					<h4><%= label_tag(:question_title, q.title) %> <small>votes: <%= q.votes %></small></h4>
+					<h4><%= label_tag(:answer, q.title) %> <small>votes: <%= q.votes %></small></h4>
 				</div>
 			</div>
 		</div>
 	<% end %>
 
+
 	<div class="row">
-		<button class="btn btn-success btn-lg btn-vote">Vote</button>
+		<%= button_tag(type: :summt, class: 'btn btn-lg btn-success btn-vote') do %>
+			<i class="fa fa-search"></i> Vote
+		<% end %>
 	</div>
-</div>
 
-
+<% end %>
