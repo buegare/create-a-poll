@@ -1,25 +1,28 @@
-<div class="create-poll-form-position">
+<%= form_tag polls_path, remote: true, method: :post, class: 'create-poll' do %>
+	
 	<div class="row">
-		<%= form_tag polls_path, remote: true, method: :post, id: 'create-poll-form' do %>
-			<div class="input-group">
-				<div class="row">
-					<%= text_field_tag :poll_title_param, params[:poll_title_param], 
-										placeholder: 'Title of poll',
-										autofocus: true,
-										class: 'form-control'%>
-				</div>
-				<div class="row">
-					<%= text_field_tag "answer_title_param[]", params[:answer_title_param], class: 'form-control' %>
-				</div>
-				<div class="row">
-					<%= text_field_tag "answer_title_param[]", params[:answer_title_param], class: 'form-control' %>	
-				</div>
-				<div class="row">
-				<span class="input-group-btn">
-					<button class="btn btn-default" type="submit">Create Poll</button>
-				</span>
-				</div>
-			</div>
+		<h2 id="poll-title"><%= text_field_tag :poll_title_param, params[:poll_title_param], 
+									placeholder: 'Type a title for your pole',
+									autofocus: true,
+									class: 'create-poll-form-title text-center' %></h2>
+	</div>
+
+	<div class="answers-group">
+		<div class="row answer-field">
+			<%= text_field_tag "answer_title_param[]", params[:answer_title_param], placeholder: 'Answer', class: 'answer-style' %>
+		</div>
+
+		<div class="row answer-field">
+			<%= text_field_tag "answer_title_param[]", params[:answer_title_param], placeholder: 'Answer', class: 'answer-style' %>
+		</div>
+	</div>
+	
+
+
+	<div class="row">
+		<%= button_tag(type: :summt, class: 'btn btn-md btn-success btn-create-poll') do %>
+			<strong>Create Poll</strong>
 		<% end %>
 	</div>
-</div>
+
+<% end %>

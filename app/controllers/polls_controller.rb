@@ -15,10 +15,10 @@ class PollsController < ApplicationController
   	  	params[:answer_title_param].each do |i|
 	   		@poll.questions.create(title: "#{i}", votes: 0)
 		end
-
-		respond_to do |format|
-			format.js
-		end
+		flash[:success] = "New poll created sucessfuly"
+		redirect_to poll_path(@poll) 
+	else
+		render 'new'
 	end
   
   end
@@ -28,5 +28,9 @@ class PollsController < ApplicationController
     def set_poll
       @poll = Poll.find(params[:id])
     end
+
+	def question_params
+	    params.require(:poll).permit(:votes, :title)
+	end
 
 end
