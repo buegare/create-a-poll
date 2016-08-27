@@ -11,6 +11,11 @@ body {
 	color: #fff;
 }
 
+.logo:hover {
+	color: #fff;
+	text-decoration: none;
+}
+
 .devise-instructions {
 	color: #fff;
 }
