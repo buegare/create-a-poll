@@ -15,7 +15,7 @@ class PollsController < ApplicationController
   	  	params[:answer_title_param].each do |i|
 	   		@poll.questions.create(title: "#{i}", votes: 0)
 		end
-		flash[:success] = "New poll created sucessfuly"
+		flash[:success] = "New poll created sucessfuly!"
 		redirect_to poll_path(@poll) 
 	else
 		render 'new'

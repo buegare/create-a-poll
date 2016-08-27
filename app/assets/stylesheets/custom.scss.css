@@ -30,8 +30,12 @@ body {
 	margin-right: auto;
 }
 
+#nav-margin {
+	margin-bottom: 100px;
+}
+
 .polls-list {
-	margin: 100px 30px 0px 30px;
+	margin: 0px 30px;
 }
 
 .each-poll {
@@ -62,7 +66,7 @@ div.polls-list a {
 }
 
 .show-poll {
-	margin: 100px 30px 0px 30px;
+	margin: 0px 30px;
 	background-color: #fff;
 	padding: 1px 10px 8px 10px;
     margin-bottom: 5px;
@@ -71,7 +75,7 @@ div.polls-list a {
 }
 
 .create-poll {
-	margin: 100px 30px 0px 30px;
+	margin: 0px 30px;
 	background-color: #fff;
 	padding: 1px 30px 8px 30px;
     margin-bottom: 5px;
