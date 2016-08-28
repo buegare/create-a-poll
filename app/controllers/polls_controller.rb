@@ -8,6 +8,10 @@ class PollsController < ApplicationController
 
   def show; end
 
+  def new
+  	@poll = Poll.new
+  end
+
   def create
   	puts params[:poll_title_param]
   	@poll = current_user.polls.new(title: params[:poll_title_param])

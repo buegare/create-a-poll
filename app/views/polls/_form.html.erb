@@ -1,4 +1,6 @@
-<%= form_tag polls_path, remote: true, method: :post, class: 'create-poll' do %>
+<%= render 'shared/errors', obj: @poll %>
+
+<%= form_tag polls_path, method: :post, class: 'create-poll' do %>
 	
 	<div class="row">
 		<h2 id="poll-title"><%= text_field_tag :poll_title_param, params[:poll_title_param], 
