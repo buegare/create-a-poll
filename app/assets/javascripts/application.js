@@ -16,3 +16,13 @@
 //= require twitter/bootstrap
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function() {
+
+	$('#add_answer_field').on('click', function() {
+		var new_answer = '<div class="row answer-field"><input type="text" name="answer_title_param[]" id="answer_title_param_" placeholder="Answer" class="answer-style"></div>'
+		$('.answers-group').append(new_answer);
+	});
+
+});
+
