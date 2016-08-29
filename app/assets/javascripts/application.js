@@ -14,10 +14,9 @@
 //= require jquery_ujs
 //= require jquery-ui
 //= require twitter/bootstrap
-//= require turbolinks
 //= require_tree .
 
-$(document).ready(function() {
+$(document).on('ready page:load', function() {
 
 	$('#add_answer_field').click(function() {
 		var new_answer = '<div class="row answer-field"><input type="text" name="answer_title_param[]" id="answer_title_param_" placeholder="Answer" class="answer-style", value: nil></div>'
@@ -25,4 +24,3 @@ $(document).ready(function() {
 	});
 
 });
-
