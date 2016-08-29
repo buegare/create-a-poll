@@ -9,7 +9,9 @@
 
 	<div class="col-xs-3">
 	<% if user_signed_in? %>
-		<%= link_to("Logout", destroy_user_session_path, class: "btn btn-danger logout", method: :delete) %>
+		<%= link_to("Logout", destroy_user_session_path, class: "btn btn-danger btn-logout_signup", method: :delete) %>
+	<% else %>
+		<%= link_to("Signup", new_user_registration_path, class: "btn btn-info btn-logout_signup") %>
 	<% end %>
 	</div>
 </div>
