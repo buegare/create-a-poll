@@ -4,7 +4,11 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  root to: 'polls#index'
+  authenticated :user do
+    root "polls#index", as: "authenticated_root"
+  end
+ 
+  root to: 'polls#new'
 
   resources :polls
 
