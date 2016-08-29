@@ -11,16 +11,16 @@
 
 	<div class="answers-group">
 		<div class="row answer-field">
-			<%= text_field_tag "answer_title_param[]", params[:answer_title_param], placeholder: 'Answer', class: 'answer-style' %>
+			<%= text_field_tag "answer_title_param[]", params[:answer_title_param], placeholder: 'Answer', class: 'answer-style', value: nil %>
 		</div>
 
 		<div class="row answer-field">
-			<%= text_field_tag "answer_title_param[]", params[:answer_title_param], placeholder: 'Answer', class: 'answer-style' %>
+			<%= text_field_tag "answer_title_param[]", params[:answer_title_param], placeholder: 'Answer', class: 'answer-style', value: nil %>
 		</div>
 	</div>
 	
 	<div class="row answer-field">
-		<%= submit_tag '+', :type => 'button', class: 'btn btn-success btn-xs', id: "add_answer_field" %>
+		<%= submit_tag '+1', :type => 'button', class: 'btn btn-success btn-xs', id: "add_answer_field" %>
 		<!-- <button class="btn btn-success btn-xs">+</button> -->
 	</div>
 

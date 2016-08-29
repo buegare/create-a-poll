@@ -13,14 +13,18 @@ class PollsController < ApplicationController
   end
 
   def create
-  	puts params[:poll_title_param]
   	@poll = current_user.polls.new(title: params[:poll_title_param])
-   	if @poll.save
-  	  	params[:answer_title_param].each do |i|
+  	clean_arr = params[:answer_title_param].reject { |item| item.blank? }
+
+  	if clean_arr.size < 2
+  		flash[:danger] = "There must be at least 2 answers filled up"
+		render 'new'
+	elsif @poll.save
+		clean_arr.each do |i|
 	   		@poll.questions.create(title: "#{i}", votes: 0)
 		end
-		flash[:success] = "New poll created sucessfuly!"
-		redirect_to poll_path(@poll) 
+		flash[:success] = "New poll created successfuly!"
+		redirect_to poll_path(@poll)
 	else
 		render 'new'
 	end
