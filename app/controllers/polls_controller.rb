@@ -1,7 +1,6 @@
 class PollsController < ApplicationController
 	before_action :set_poll, only: [:show, :destroy, :update ]
 
-
   def index
   	@polls = Poll.find_polls(current_user.id)
   end

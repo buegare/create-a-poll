@@ -8,10 +8,17 @@
 	</div>
 
 	<div class="col-xs-3">
-	<% if user_signed_in? %>
+	<% if current_user %>
 		<%= link_to("Logout", destroy_user_session_path, class: "btn btn-danger btn-logout_signup", method: :delete) %>
 	<% else %>
-		<%= link_to("Signup", new_user_registration_path, class: "btn btn-info btn-logout_signup") %>
+		<div class="row">
+			<div class="col-xs-6 col-xs-push-2">
+				<%= link_to("Sign up", new_user_registration_path, class: "btn btn-info btn-logout_signup") %>
+			</div>
+			<div class="col-xs-6">
+				<%= link_to("Sign in", new_user_session_path, class: "btn btn-info btn-logout_signup") %>
+			</div>
+		</div>
 	<% end %>
 	</div>
 </div>

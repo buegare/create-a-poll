@@ -5,4 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :polls
+
+  def self.get_user()
+  	where(email: 'guest@example.com').first
+  end
 end
