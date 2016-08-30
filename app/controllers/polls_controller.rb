@@ -1,5 +1,6 @@
 class PollsController < ApplicationController
 	before_action :set_poll, only: [:show, :destroy, :update ]
+	before_action :set_user, only: [:create]
 
   def index
   	@polls = Poll.find_polls(current_user.id)
@@ -12,7 +13,7 @@ class PollsController < ApplicationController
   end
 
   def create
-  	@poll = current_user.polls.new(title: params[:poll_title_param])
+  	@poll = @user.polls.new(title: params[:poll_title_param])
   	clean_arr = params[:answer_title_param].reject { |item| item.blank? }
 
   	if clean_arr.size < 2
@@ -34,6 +35,14 @@ class PollsController < ApplicationController
     
     def set_poll
       @poll = Poll.find(params[:id])
+    end
+
+    def set_user
+    	if current_user
+    		@user = current_user
+    	else
+    		@user = User.get_user()
+    	end
     end
 
 	def question_params
