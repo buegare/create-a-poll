@@ -34,7 +34,8 @@ class PollsController < ApplicationController
   private
     
     def set_poll
-      @poll = Poll.find(params[:id])
+      # @poll = Poll.find(params[:id])
+      @poll = Poll.friendly.find(params[:id])
     end
 
     def set_user
