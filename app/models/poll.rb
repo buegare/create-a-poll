@@ -7,7 +7,7 @@ class Poll < ApplicationRecord
 	validates :title, presence: true, length: { minimum: 3, maximum: 150 }
   	
 
-  	friendly_id :title, use: :slugged
+  	friendly_id :title
 
 	def self.find_polls(user_id)
 		where("user_id = ?",  user_id).order(created_at: :desc)
