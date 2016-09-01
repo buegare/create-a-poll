@@ -122,6 +122,15 @@ div.polls-list a {
     font-size: large;
 }
 
+#index-poll {
+	margin: 0px 30px;
+	background-color: #fff;
+	padding: 1px 30px 8px 30px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    color: rgba(0, 0, 0, 0.70);
+}
+
 /*.row {
 	border: solid 1px red;
 }

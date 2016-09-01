@@ -1,9 +1,15 @@
-<div class="polls-list">
-	<% @polls.each do |poll| %>
-		<%= link_to poll_path(poll) do %>
-			<div class="each-poll">
-				<h2 class="text-center"><%= poll.title %></h2>
-			</div>
+<% if current_user.polls.size > 0 %>
+	<div class="polls-list">
+		<% @polls.each do |poll| %>
+			<%= link_to poll_path(poll) do %>
+				<div class="each-poll">
+					<h2 class="text-center"><%= poll.title %></h2>
+				</div>
+			<% end %>
 		<% end %>
-	<% end %>
-</div>
+	</div>
+<% else %>
+	<div class="text-center" id="index-poll">
+		<h1>Your list of polls is empty. Create some polls!</h1>
+	</div>
+<% end %>
