@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+guest = User.new(name: 'Guest', lastname: 'User', email: 'guest@example.com', password: '123456' )
+if guest.save
+	puts "Guest user created successfuly!"
+else
+	puts "Guest user could not be created"
+	puts guest.errors.full_messages
+end
