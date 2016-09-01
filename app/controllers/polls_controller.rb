@@ -1,4 +1,5 @@
 class PollsController < ApplicationController
+	before_action :authenticate_user!, :except => [:new, :create, :show]
 	before_action :set_poll, only: [:show, :destroy, :update ]
 	before_action :set_user, only: [:create]
 

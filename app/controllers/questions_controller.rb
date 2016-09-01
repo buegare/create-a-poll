@@ -1,5 +1,6 @@
 class QuestionsController < ApplicationController
-  
+  before_action :authenticate_user!, :except => [:update]
+
   def update 
   	if params[:answer]
   		Question.compute_vote(params[:answer])
