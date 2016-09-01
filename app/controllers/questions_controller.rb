@@ -3,7 +3,15 @@ class QuestionsController < ApplicationController
 
   def update 
   	if params[:answer]
-  		Question.compute_vote(params[:answer])
+  		@question = Question.find(params[:answer])
+  		@question.votes += 1
+  		if @question.save
+  			flash[:success] = "Thank you for voting!"
+  			redirect_to poll_path(@question.poll)
+  		else
+  			flash[:danger] = "Your vote could not been computed!"
+  			redirect_to poll_path(@question.poll)
+  		end
    	end
   end
 
