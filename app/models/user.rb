@@ -7,6 +7,6 @@ class User < ApplicationRecord
   has_many :polls
 
   def self.get_user()
-  	where(email: 'guest@example.com').first
+  	where(email: Rails.configuration.x.guest_user_email).first
   end
 end
