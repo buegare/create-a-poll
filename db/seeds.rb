@@ -6,7 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-guest = User.new(name: 'Guest', lastname: 'User', email: 'guest@example.com', password: '123456' )
+guest = User.new(name: Rails.configuration.x.guest_user_name, 
+				 lastname: Rails.configuration.x.guest_user_lastname, 
+				 email: Rails.configuration.x.guest_user_email, 
+				 password: Rails.configuration.x.guest_user_password )
 if guest.save
 	puts "Guest user created successfuly!"
 else

@@ -14,7 +14,7 @@
 					<% elsif current_user and @poll.user_id != current_user.id %>
 						<h4><%= label_tag(:answer, q.title) %></h4>
 					<% else %>
-						<h4><%= label_tag(:answer, q.title) %></h4>
+						<h4><%= label_tag(:answer, q.title) %> <small>votes: <%= q.votes %></small></h4>
 					<% end %>
 				</div>
 			</div>
